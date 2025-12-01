@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+<style>
+*{
+margin:4px;
+padding:2px;
+box-sizing:border-box;
+}
+body{
+font-family:Arial,sans-serif;
+background-color:lavender;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+label{
+color:#555;
+font-weight:bold;
+margin-bottom:2px;
+}
+input,select,button{
+width:100%;
+padding:10px;
+border:1px solid #cc;
+border-radius:4px;
+font-size:14px;
+}
+button{
+background-color:pink;
+}
+button:hover{
+background-color:purple;
+}
+</head>
+</style>
+<body>
+<h2>HTML forms</h2>
+<form action="/action_page.php">
+<label for="fname">First name:</label>
+<br>
+<input type="text" id="fname" name="fname" >
+<br>
+<label for="lname">Last name:</label>
+<br>
+<input type="text" id="lname" name="lname" >
+<br>
+<p>Choose your fav web language:</p>
+<input type="radio" id="html" name="fav_language" value="HTML">
+<label for="html">HTML</label><br>
+<input type="radio" id="css" name="fav_language" value="CSS">
+<label for="css">CSS</label><br>
+<input type="radio" id="javascript" name="fav_language" value="JavaScript">
+<label for="javascript">JavaScript</label><br><br>
+<input type="checkbox" id="vehicle1" name="vehicle1" value="BIKE">
+<label for="vehicle1">I have bike.</label><br>
+<input type="checkbox" id="vehicle2" name="vehicle2" value="CAR">
+<label for="vehicle2">I have car.</label><br>
+<input type="checkbox" id="vehicle3" name="vehicle3" value="BOAT">
+<label for="vehicle3">I have boat.</label><br>
+<label for"car">Choose a car:</label>
+<select id="cars" name="cars" size="2" multiple>
+<option value="Breeza">BREEZA</option>
+<option value="Audi">AUDI</option>
+<option value="KIA">KIA</option>
+</select>
+<br>
+<label for="username">Username:</label>
+<br>
+<input type="text" id="username" name="username" >
+<br>
+<label for="psw">Password:</label>
+<br>
+<input type="password" id="psw" name="psw" >
+<br>
+<label for="Email">Email Address:</label>
+<br>
+<input type="email" id="Email" name="Email" >
+<br>
+<label for="num">Quantity 1 to 10:</label>
+<input type="number" id="num" name="num" min="1" max="100">
+<br>
+<label for="fcolor">Select your fav color:</label>
+<input type="color" id="fcolor" name="fcolor" >
+<br><br>
+<label for="dob">Select your DOB:</label>
+<input type="date" id="dob" name="dob" >
+<br><br>
+<input type="submit" value="Submit">
+<p>If you click the 'submit' button the form data will be sent for "/action_page.php"</p>
+</form>
+</body>
+</html>

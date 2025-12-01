@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<head>
+ <title>Simple Calculator</title>
+ <style>
+  body {
+   font-family: Arial, sans-serif;
+   background: lavender;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+  }
+  .calculator {
+   background: white;
+   padding: 30px;
+   border-radius: 10px;
+   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+   width: 300px;
+  }
+  .calculator h2 {
+   text-align: center;
+   margin-bottom: 20px;
+  }
+  input[type="number"] {
+   width: 92%;
+   padding: 10px;
+   margin: 8px 0;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   font-size: 16px;
+  }
+  .buttons {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   margin-top: 15px;
+  }
+  .buttons button {
+   flex: 1 1 45%;
+   padding: 10px;
+   font-size: 16px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   background-color: purple;
+   color: white;
+  }
+  .buttons button:hover {
+   background-color: violet;
+}
+  #result {
+   margin-top: 20px;
+   font-weight: bold;
+   text-align: center;
+  }
+ </style>
+</head>
+<body>
+ <div class="calculator">
+  <h2>Simple Calculator</h2>
+  <input type="number" id="num1" placeholder="Enter first number">
+  <input type="number" id="num2" placeholder="Enter second number">
+  <div id="result"></div>
+  <div class="buttons">
+   <button onclick="calculate('sum')">Sum</button>
+   <button onclick="calculate('difference')">Difference</button>
+   <button onclick="calculate('product')">Product</button>
+   <button onclick="calculate('quotient')">Quotient</button>
+   <button onclick="calculate('remainder')">Remainder</button>
+   <button onclick="calculate('power')">Power</button>
+   <button onclick="calculate('square')">Square</button>
+   <button onclick="calculate('sqrt')">Square Root</button>
+  </div>
+ </div>
+<script>
+function calculate(operation) {
+ const num1 = parseFloat(document.getElementById('num1').value);
+ const num2 = parseFloat(document.getElementById('num2').value);
+ let result;
+ switch (operation) {
+  case 'sum':
+   result = num1 + num2;
+   break;
+  case 'difference':
+   result = num1 - num2;
+   break;
+  case 'product':
+   result = num1 * num2;
+   break;
+  case 'quotient':
+   result = num2 !== 0 ? num1 / num2 : 'Error: Division by zero';
+   break;
+  case 'remainder':
+   result = num2 !== 0 ? num1 % num2 : 'Error: Division by zero';
+   break;
+  case 'power':
+   result = Math.pow(num1, num2);
+   break;
+  case 'sqrt':
+   result = num1 >= 0 ? Math.sqrt(num1).toFixed(4) : 'Error: Negative input';
+   break;
+  case 'square':
+   result = Math.pow(num1, 2);
+   break;
+  default:
+   result = 'Invalid operation';
+ }
+ document.getElementById('result').innerText = 'Result: ' + result;
+}
+</script> 
+</body>
+</html>
